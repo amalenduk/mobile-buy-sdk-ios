@@ -81,7 +81,7 @@ public extension Card {
         /// - returns:
         /// A reference to a `Task` representing this vault operation.
         ///
-        public func vault(_ creditCard: CreditCard, to url: URL, completion: @escaping VaultCompletion) -> Task {
+        public func vault(_ creditCard: CreditCard, to url: URL, completion: @escaping VaultCompletion) -> GQTask {
             let task = self.session.dataTask(with: self.requestFor(creditCard, to: url)) { data, response, error in
                 
                 guard let data = data else {
